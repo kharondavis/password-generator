@@ -1,59 +1,84 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Password Generator</title>
+    <meta
+      name="description"
+      content="Web application to create secure passwords."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Password Generator</title>
-        <meta name="description" content="Web application to create secure passwords." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-
-    <body>
-        <header>
-            <div class="title-container">
-                <h1 class="title">Password Generator</h1>
-            </div>
-            <p class="subtitle">Create secure passwords for any account!</p>
-        </header>
-        <main>
-            <div class="form-container">
-                <form id="param-form">
-                    <div class="param-container">
-                        <label for="password-amount">Number of passwords to make</label>
-                        <input type="number" id="password-amount" name="password-amount" min="1" max="5"
-                            value="Enter amount of passwords" />
-                    </div>
-                    <div class="param-container">
-                        <label for="password-length">Password length</label>
-                        <input type="number" id="password-length" name="password-length" min="8" max="25"
-                            value="Enter character amount" />
-                    </div>
-                    <div class="param-container">
-                        <label for="include-numbers">Include numbers</label>
-                        <input type="checkbox" id="include-numbers" name="include-numbers" unchecked />
-                    </div>
-                    <div class="param-container">
-                        <label for="special-char">Include special characters</label>
-                        <input type="checkbox" id="special-char" name="special-char" unchecked />
-                    </div>
-                    <div class="param-container">
-                        <label for="complexity">Password Complexity</label>
-                        <select id="complexity" name="complexity">
-                            <option value="less">Less</option>
-                            <option value="standard" selected>Standard</option>
-                            <option value="more">More</option>
-                        </select>
-                    </div>
-                    <div class="submit-container">
-                        <button type="button" onclick="generatePasswords()">Generate!</button>
-                    </div>
-                </form>
-                <div id="passwordResult"></div>
-            </div>
-        </main>
-        <script src="script.js" async defer></script>
-    </body>
-
+  <body>
+    <header>
+      <div class="title-container">
+        <h1 class="title">Password Generator</h1>
+      </div>
+      <p class="subtitle">Create secure passwords for any account!</p>
+    </header>
+    <main>
+      <div class="form-container">
+        <form id="param-form">
+          <div class="param-container">
+            <label for="password-amount">Number of passwords to make</label>
+            <input
+              type="number"
+              id="password-amount"
+              name="password-amount"
+              min="1"
+              max="5"
+              value="Enter amount of passwords"
+            />
+          </div>
+          <div class="param-container">
+            <label for="password-length">Password length</label>
+            <input
+              type="number"
+              id="password-length"
+              name="password-length"
+              min="8"
+              max="25"
+              value="Enter character amount"
+            />
+          </div>
+          <div class="param-container">
+            <label for="include-numbers">Include numbers</label>
+            <input
+              type="checkbox"
+              id="include-numbers"
+              name="include-numbers"
+              unchecked
+            />
+          </div>
+          <div class="param-container">
+            <label for="special-char">Include special characters</label>
+            <input
+              type="checkbox"
+              id="special-char"
+              name="special-char"
+              unchecked
+            />
+          </div>
+          <div class="param-container">
+            <label for="complexity">Password Complexity</label>
+            <select id="complexity" name="complexity">
+              <option value="less">Less</option>
+              <option value="standard" selected>Standard</option>
+              <option value="more">More</option>
+            </select>
+          </div>
+          <div class="submit-container">
+            <button type="button" onclick="generatePasswords()">
+              Generate!
+            </button>
+          </div>
+        </form>
+        <div id="passwordResult"></div>
+      </div>
+    </main>
+    <script src="script.js" async defer></script>
+  </body>
 </html>
