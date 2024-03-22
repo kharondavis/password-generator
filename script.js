@@ -28,16 +28,7 @@ function generatePasswords() {
     // Step 3: Display passwords
 
     // Call the displayPasswords function to display the generated passwords //
-    function displayPasswords(passwords) {
-        var passwordResultElement = document.getElementById("passwordResult");
-        passwordResultElement.innerHTML = ""; //clear previous result//
-
-        passwords.forEach(function (password) {
-            var passwordElement = document.createElement("p");
-            passwordElement.textContent = password;
-            passwordResultElement.appendChild(passwordElement);
-        });
-    }
+    displayPasswords(passwords);
 
 }
 
@@ -46,7 +37,7 @@ function generatePassword(passwordLength, includeNumbers, includeSpecialChars, p
     //Define character sets //
     var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
     var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var specialChars = "!@#$%&?";
+    var specialChars = "!@#$%&?-";
     var numberChars = "0123456789";
 
     // Initialize an empty string to store the character set //
@@ -84,6 +75,21 @@ function generatePassword(passwordLength, includeNumbers, includeSpecialChars, p
     console.log(charset);
     console.log(password);
 
+    return password;
+
+}
+
+function displayPasswords(passwords) {
+    // Clear previous result
+    var passwordResultElement = document.getElementById("passwordResult");
+    passwordResultElement.innerHTML = "";
+
+    // Loop through the passwords array and create a paragraph element for each password
+    passwords.forEach(function (password) {
+        var passwordElement = document.createElement("p");
+        passwordElement.textContent = password;
+        passwordResultElement.appendChild(passwordElement);
+    });
 }
 
 
