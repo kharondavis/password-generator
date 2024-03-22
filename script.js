@@ -8,6 +8,7 @@ function generatePasswords() {
     // Check if the "include-numbers" checkbox is checked //
     var includeNumbers = document.getElementById("include-numbers").checked;
     var includeSpecialChars = document.getElementById("special-char").checked;
+    var includeWords = document.getElementById("include-words").checked;
 
     // Retrieve the selected option from the "complexity" dropdown
     var passwordComplexity = document.getElementById("complexity").value;
@@ -21,7 +22,7 @@ function generatePasswords() {
     for (var i = 0; i < passwordAmount; i++) {
         // Call the generatePassword function to generate a single password
         // and add it to the passwords array //
-        var password = generatePassword(passwordLength, includeNumbers, includeSpecialChars, passwordComplexity);
+        var password = generatePassword(passwordLength, includeNumbers, includeSpecialChars, includeWords, passwordComplexity);
         passwords.push(password);
     }
 
@@ -39,6 +40,7 @@ function generatePassword(passwordLength, includeNumbers, includeSpecialChars, p
     var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var specialChars = "!@#$%&?-";
     var numberChars = "0123456789";
+    var phraseWords = []
 
     // Initialize an empty string to store the character set //
     var charset = "";
